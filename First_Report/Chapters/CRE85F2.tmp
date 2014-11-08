@@ -1,0 +1,133 @@
+%% ----------------------------------------------------------------
+%% Body.tex
+%% ---------------------------------------------------------------- 
+
+
+%\chapter[ReportBody]{Design} \label{Chapter:ReportBody}
+\section{Instruction set} \label{Section:Instruction}
+
+\subsection{Instruction format}\label{Section:Instruction format}
+During the project, there were seven types of instructions have been implemented. In the original design, each instruction was composed of 4 bits operand, 3 bits source and destination register address and 8 bits immediate (18 bits in total). After the improvement, the instruction size was reduced to 11 bits, with only 6 bits Immediate, 3 bits of operand code and 2 bits register address. All Instruction types are summarised in table 1.
+
+
+\begin{table}[ht]
+\caption{Instruction Set} % title of Table
+\centering % used for centering table
+\begin{tabular}{c c c } % centered columns (4 columns)
+\hline\hline %inserts double horizontal lines
+Instruction                 & Acronym     & Description \\ [0.5ex] % inserts table
+%heading
+\hline % inserts single horizontal line
+Addition                    & ADD         & \(Rd \leftarrow Rd + Rs \)  \\
+Addition immediate          & ADDI        & \(Rd \leftarrow Rd + Imm\)      \\
+Multiply                    & MUX         & \(Rd \leftarrow Rd \times Rs\)      \\
+Multiply immediate          & MUXI        & \(Rd \leftarrow Rd \times Imm\)      \\
+Wait while SW[8]= 0         & WAIT0       & \(if(SW[8] = 1) PC++     \)          \\
+Wait while SW[8]= 1         & WAIT1       & \(if(SW[8] = 0) PC++  \)         \\
+Absolute jump               & JUMP        & \(PC \leftarrow 0  \)             \\ [1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:instr} % is used to refer this table in the text
+\end{table}
+
+
+\subsection{Control Instruction} \label{SubSection:Control Instruction}
+
+The affine transform does not require any decisions based on the data. Therefore there is no flag needed, neither are the conditional branches. The only necessary control signal is for the handshaking procedure, and it comes from the switch SW8. The function of the control signal is simply allowing the program counter to increment at the correct moment. In this case, instruction WAIT0 and WAIT1 are implemented to wait control value from switch SW8. 
+At the end of the affine transform, an absolute jump is essential for returning the processor back to the start. The absolute jump replaces the value of the program counter with last four bits in the instruction, which enables the processor to jump to any step in the program memory. In this project, it only resets the program counter and clear the immediate with 0s’. But meanwhile it accesses the memory location that contains the result of last calculation to illustrate its value on the FPGA LEDs.
+
+
+\subsection{Arithmetic and register instruction} \label{SubSection:Arithmetic and register instruction}
+In order to accomplish an affine transform, at least two kinds of arithmetic are needed: addition and multiplication. In the processor, the corresponding arithmetic instructions were ADD and MUX. They consist of the operand codes that will deliver operating commands to Arithmetic Logic Unit (ALU), designated source and destination register addresses. In addition, instruction ADDI and MUXI were developed for the arithmetic with signed immediate values. Those instructions select build-in immediate values rather than the ones from source register. They are very convenient when doing the calculations with matrix constants. No subtract instruction was implemented to reduce the size of the ALU and no sign extension is needed for the calculation operation.\\
+At the beginning of the affine transform, x1 and y1 values are provided by the switches. The processor needs to read and store them in the certain memory locations. Therefore a store instruction LOAD is implemented for this purpose. Since the register will also be accessed in conjunction with other arithmetic instructions, the register addresses are included in those instructions. 
+ 
+	
+\section{Program Counter} \label{Program Counter}
+
+%\subsection{BT Group Plc}
+Program counter is the simplest module in the system. The counter will increment every clock cycle if the increment control signal PCincr is high. If the jump instruction is called, the absolute branch control signal PCabsbranch will force the counter to jump to the address given by the instruction in the program memory. In this case, it would be the start position of the operation. The program counter size was set to 5 bits, so it can count up to 32 instructions. 
+
+		\begin{figure}[ht!]
+		\centering
+		%\includegraphics[width = 0.9\textwidth]{Figures/Overview_of_presentations}
+		\includegraphics[width = 1.1\textwidth]{Figures/PC}		
+		\caption[Additional Notes]{Testbench result of program counter}
+		\label {fig:pc}
+
+	\end{figure}
+
+\lstset{language=verilog,caption={Testbench for program counter},label=pctest}
+\begin{lstlisting}
+module pctest;
+ parameter Psize = 5;
+ logic clk, reset, PCincr,PCabsbranch;
+ logic [Psize-1:0] Branchaddr;
+ logic [Psize-1 : 0]PCout;
+ 
+pc  #(.Psize(Psize)) P(.*);
+
+//------------- code starts here ---------
+//clock
+initial
+begin
+  clk =  0;
+  #5ns  forever #5ns clk = ~clk;
+end
+
+initial
+begin
+  //default
+ reset = 1;
+ PCincr = 0;
+ Branchaddr = 4'b0000; 
+ PCabsbranch = 0;
+  
+  // test all functions
+  #10 reset = 0; 
+  #10 PCincr = 1; //start counting
+  #10 PCincr = 0; //stop counting
+  #10 PCincr = 1;
+  #50 PCabsbranch = 1;PCincr = 0; //JUMP
+  #10 PCabsbranch = 0;
+  #10 PCincr = 1;
+
+end //initial
+
+endmodule //end of pctest
+
+\end{lstlisting}
+The testbench and simulation result of program counter are shown in Figure ~\ref{fig:pc} and listing ~\ref{pctest}. At 20ns, the increment control signal PCincr went high so the counter started to count up. At 30ns, PCincr went low so counter stopped counting at the current clock cycle. At 90ns, the testbench simulated a “jump” instruction: PCincr became low and absoluate branch control signal PCabsbranch went to high. In this case, the counter loaded the address from Branch address Brachaddr (0000) and restart the counting.\\
+
+The RTL level synthesis of program counter is shown in Figure ~\ref{fig:counter}.
+
+		\begin{figure}[ht!]
+		\centering
+		%\includegraphics[width = 0.9\textwidth]{Figures/Overview_of_presentations}
+		\includegraphics[width = 0.8\textwidth]{Figures/counter}		
+		\caption{RTL synthesis of program counter}
+		\label {fig:counter}
+
+	\end{figure}
+
+\subsection{Nokia}
+
+Nokia is a Finnish communications and information technology multinational corporation. It was once the largest mobile phone producer and advanced telecommunication technology developer.  However, Nokia was not set up as a mobile phone technology company as mobile telecommunications had not yet even been invented when Nokia was founded in 1865.  After World War II, Nokia was involved in many business areas including: paper products, footwear, communications cables, televisions and other consumer electronics. This diversity brought Nokia a lot of fortune but also a huge problem: the bloated company with too many market segments affected the company's future development plans and severely delayed the improvement design of products. Eventually, producing outdated products pushed Nokia into serious financial problems. Fortunately, as an established company, Nokia had enough resources and previous experience to stay relevant in the changing business environment it found itself in. For example, during the 1990s, the rubber, cable and consumer electronics divisions were gradually sold as Nokia continued to divest itself of all of its non-telecommunications businesses.
+ 
+Interestingly, prior to the strategy change, Nokia had already developed many technologies on telecommunication area and merged with several radio communication partners. Those achievements gave Nokia major advantage over its competitors\cite{39} and even led to the production of one of the very first mobile phones \cite{41}.  This new strategy based on innovation further enabled Nokia take advantage of new opportunities and technologies to drive innovation in the mobile telecommunications market. For example, Nokia was one of the first players in the mobile space to recognize that there was a market opportunity in combining a game console and a mobile phone, which many gamers wanted \cite{ngage}.  In the early years of 2000s, Nokia was always one step ahead of competitors in both mobile phone software and hardware development, such as self-developed smartphone operating system Symbian \cite{symbian} and touch screen technology on phone \cite{touchscreen}, long before Apple's IPhone.
+ 
+Apart from leading on the product innovation front, Nokia also focused on other business model related innovations as well, such as investing in new generation mobile network technology like GSM (Global System for Mobile telecommunication). Furthermore, Nokia overhauled its entire logistics operation in the mid-1990s, to make sure the products manufacture speed could meet up with the fast market requirements. These innovations and accomplishments worked to make Nokia the world's largest and dominant mobile phone manufacturer for the 14 consecutive years from 1998 to 2012.
+
+With the solid success in the mobile phone market, Nokia's ambition was set into internet business where there was competition from the likes of Google, Apple and Microsoft.  However, when Apple introduced its first IPhone into the market, Nokia didn't pay enough attention as Apple only owned 8.2\% of smartphone market at that time, while Android only had 3.9\% of the market at the time as well \cite{130}.  From 2007 to 2010, although Nokia still produced the best mobile phone hardware technologies over its rivals, the operating system Symbian was gradually outmatched by iOS and Android. Though Nokia released several improved models of Symbian, the slow innovation on the Symbian system in the face of the superior iOS and Android systems meant Nokia could just not compete adequately. This resulted in Nokia losing almost 30\% of its mobile phone market share and many OEMs (Original Equipment Manufacturers) while Apple and Google on the contrary made extraordinary gains \cite{134}.
+ 
+Eventually Nokia gave up Symbian\cite{5} and allied with Microsoft\cite{135} to compete with Google and Apple. However, despite this new partnership, the new Nokia phone with Window phone OS (Operating System) was still not favoured enough by the public to stop Nokia’s reducing influence and its market share continued to drop. In June 2011, Nokia was replaced by Apple as the world's biggest smartphone designer \cite{145}. Most European franchisers believe that Nokia Windows phones compare less favourably with the Apple iPhone or Samsung Galaxy.  Statements such as "They are overpriced for what is not an innovative product" and "No one comes into the store and asks for a Windows phone" summarise this perception \cite{156}.
+ 
+Nokia’s example illustrates the invaluable role that product and business model innovation plays in ensuring an established company maintains its competitive edge especially in the face of stiff competition from new entrants. While keeping one step ahead of its rivals undoubtedly contributed greatly to Nokia's early success, its inability to maintain or replicate this approach in the mobile phone market let to its downfall.  Nokia could be said to have been caught out by its inability to innovate in such a way as to deliver products with better user experience than its rivals thus leading to a situation in recent years such as 2012 and 2013 where high investments and expectations have only led to poor and non-commensurate results  \cite{174}.
+
+\subsection{Intel} 
+Intel, founded in 1968, is a leading computer processor, chip set and graphics design and manufacturing company. Thanks to its `Intel Inside' marketing campaign and early traction in the PC market, with the advent of IBM's `Personal Computer', Intel has become the largest supplier of x86 architecture processors for desktop, laptop and server devices and dominates the high-performance computing market with over 80\% market share in both consumer devices and servers to this day \cite{Intel:2012:annualreport}. It is both the length of time the company has been trading, producing their first microprocessor in 1971 with SRAM and DRAM (static and dynamic random access memory) before that, and the extent of the company's market reach that qualify Intel as an established company \cite{jackson:1998:inside}.
+
+In an environment where almost all microprocessor designers choose to operate without in-house facilities to commit their designs to Silicon (such as the likes of ARM and Imagination discussed previously) partly owing to the huge capital investments required \cite{tristram:2003:reinventing}, Intel stands out as the one company capable of producing leading IC designs on state-of-the-art Silicon chips. Intel's robust business model enables it distinguish itself on making higher quality microprocessors than its competitors, and has been working with Silicon transistors since its founding \cite{perrons:2009:open}. Intel was founded by Robert Noyce and Gordon Moore, of Fairchild Semiconductor who coined the famed Moore's law (predicting the sustained increase of transistor density over time).  These two brought with them considerable expertise in the fledging semiconductor industry which allowed Intel to adopt open innovation principles to make early progress in the sector and to develop a reputation for high-quality manufacturing techniques very early on.  The adoption of open and sometimes closed innovation paradigms enabled Intel maintain the path predicted by Moore's Law and extend that success onto other sectors like communications and consumer electronics \cite{gawer:2007:platform,hiremane:2005:moore,chesbrough:2003:open} .  This not only ensured its long-term dominance but profitability as well.
+
+This position of control over both the intellectual property and the state-of-the-art manufacturing processes of their microprocessor designs gave Intel a clear advantage over competitors \cite{lim:2004:relationship,west:2006:challenges}. They are able to optimise their designs at every stage of the production process, and operate without the added expense of royalties per chip manufactured \cite{norman:2004:role}. This results in unparalleled profit margins on its leading products that undoubtedly drives the company's profitability. That is not to say that Intel has remained unchallenged. The company has faced stiff competition from rival microprocessor design firm AMD, who offer comparable performance at a cheaper price point \cite{AMD:2007:annualreport}. Intel was required to employ some very aggressive market strategies to keep AMD from gaining valuable market share, a tactic that cost the company over \$1.2 billion in settlements with AMD before its eventual decline \cite{fowder:2010:intel}. However a superior product offering coupled with aggressive marketing and adoption of open innovation has allowed Intel to remain dominant in the consumer computing market.
+
+Intel faces new challenges as microprocessor demand shifts towards mobile platforms, and away from `performance at any power cost' computing. ARM has excelled by offering reasonable performance processing cores at very low power consumptions, and has therefore dominated the mobile computing market up to now. However, although maybe slow to react, the Intel design machine has turned its attention to low-power chip design, aiming to improve its standing in the growing server market space (growing as the PC market declines in the advent of cloud computing) and to break into the mobile market and compete with ARM for share in a market that continues to expand. If Intel is able to produce microprocessors of comparable power consumption and with the performance and backwards-compatibility of its current microprocessor offerings it may well be able to erode ARM's near monopoly in the mobile device market. In any case, the company continues to offer year-on-year improvements in both the design and manufacture of its leading CPUs and will remain profitable whilst it continues to do so as posited by its annual report for 2012 \cite{Intel:2012:annualreport} which showed its very strong financial position. In this way Intel's business model clearly supports the proposition that its consistent innovation has been key its profitability and continued dominance.

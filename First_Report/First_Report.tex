@@ -1,0 +1,167 @@
+%% ----------------------------------------------------------------
+%% Final_Report.tex
+%% ---------------------------------------------------------------- 
+%%Preamble
+\documentclass{ecsarticle}			 % Use the GDP Report Style
+\graphicspath{{../Figures/}}   				% Location of your graphics files
+%\usepackage{natbib}           					 % Use Natbib style for the refs.
+\usepackage{listings} 							%Package to include source code.
+\usepackage{booktabs}
+\usepackage{pdflscape}       	% Enables the use of landscape orientation of pages
+\usepackage{longtable}        % Enables a table to cut across more than one page
+\usepackage{tabu}         		% Used together with longtable for the above purpose
+\usepackage{multirow}					% Used for the multi column testing table (for power)
+\usepackage{bigstrut}					% Used for the multi column testing table (for power)
+\usepackage{appendix}			% To use \appendixpage to add Appendix Chapter
+\usepackage{color}				% listings colour
+\usepackage{float}
+\usepackage{fixltx2e}
+\usepackage{hyperref}
+\newcommand{\plus}{\raisebox{.4\height}{\scalebox{.6}{+}}}	% Used for the small + and - signs in the power testing table
+\newcommand{\minus}{\raisebox{.4\height}{\scalebox{.8}{-}}} % Used for the small + and - signs in the power testing table
+
+%\lstset{language=C}   					%Set source code language to 'c'
+%\usepackage[inline]{enumitem} 			%In line lists
+\usepackage{paralist}
+\usepackage{tensor}			% Enables writing super- and sub- scripts on left hand side
+\usepackage{mathtools}
+%Uncomment the following to enable 3 column footnotes (doesnt work for Tom!?)
+%\usepackage{savesym}				%Save command symbols to resolve package conflicts.
+%\savesymbol{lemma}
+%\usepackage{ledmac}
+%\usepackage{eledmac}
+%\restoresymbol{LED}{lemma}
+%\footthreecolX{A}
+%\let\footnote\footnoteA
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{lightblue}{rgb}{0.80,0.95,1.0}
+
+\lstset{ %
+  language=C,                % the language of the code
+  basicstyle=\footnotesize,           % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\tiny\color{black},  % the style that is used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line 
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  %frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  %title=\lstname,                   % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve},         % string literal style
+  escapeinside={\%*}{*)},            % if you want to add LaTeX within your code
+  morekeywords={*,...},              % if you want to add more keywords to the set
+  deletekeywords={...}              % if you want to delete keywords from the given language
+}
+
+
+
+\removecolourlinks    % Uncomment this command to remove colour from any links
+\input{Special/Definitions}            % Include your abbreviations
+%% ----------------------------------------------------------------
+
+\begin{document}
+\frontmatter
+\title      {SOC Design Report}
+\authors    {\texorpdfstring
+             {\href{mailto:xb1g10@ecs.soton.ac.uk}{Xuan Ban}}
+             {Xuan Ban} \\  
+							\texorpdfstring
+             {\href{mailto:xb1g10@ecs.soton.ac.uk}{xb1g10}}
+             {xb1g10} \\ 
+             {\href{mailto:xb1g10@ecs.soton.ac.uk}{Yang Huihuang}}
+         \\  
+							\texorpdfstring
+             {\href{mailto:hy9g10@ecs.soton.ac.uk}{hy9g10}}
+            {hy9g10}  \\ 
+             {\href{mailto:xb1g10@ecs.soton.ac.uk}{Dedic Charlie}}
+             \\  
+							\texorpdfstring
+             {\href{mailto:cd2g10@ecs.soton.ac.uk}{cd2g10}}
+             {cd2g10} \\ 
+    {\href{mailto:xb1g10@ecs.soton.ac.uk}{Wang Chu}}
+             \\  
+							\texorpdfstring
+             {\href{mailto:cd2g10@ecs.soton.ac.uk}{cw9g10}}
+             {cw9g10} \\
+            }
+\department  {Electronics and Computer Science}
+\group       {}
+\addresses  {\groupname\\\deptname\\\univname}
+\date       {\today}
+%\subject    {}
+%\keywords   {}
+\supervisor {Professor Steve Gunn}
+%\examiner   {}
+
+\degree     {Master of Engineering}
+\maketitle
+
+\begin{abstract}
+Abstract goes here. Use this latex template as our report template.
+\end{abstract}
+
+\newpage
+%\setcounter{tocdepth}{2} %Set table of contents depth - not include subsubsections and paragraphs.
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+%% -----------------------
+%% lstpatch.sty
+%% -----------------------
+%% lstpatch cannot be distributed with these files. I believe it is only needed if the
+%% \lstlistoflistings is used. So this has been turned off by default. Re-add if required:
+%% \usepackage{lstpatch}
+%% \lstlistoflistings
+%% You will need to download lstpatch, possibly from:
+%% http://web.mit.edu/texsrc/source/latex/listings/lstpatch.sty
+%% -----------------------
+
+
+
+%\acknowledgements{
+%Many thanks to no one yet \dots
+%}
+
+
+%\listofsymbols{ll}{$w$ & The angular velocity vector }
+\mainmatter
+%% ----------------------------------------------------------------
+\include{Chapters/Introduction}
+\include{Chapters/ReportBody}
+\include{Chapters/Conclusions}
+
+
+
+%\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{ieeetran}
+\bibliography{Special/First_References}
+%\end{document}
+%% ----------------------------------------------------------------
+
+
+%\appendix
+%\appendixpage
+%\addappheadtotoc
+%\include{Appendices/AppendixA}
+%\include{Appendices/AppendixB}
+%\include{Appendices/AppendixC}
+%\include{Appendices/AppendixD}
+%\include{Appendices/AppendixE}
+
+\end{document}

@@ -1,0 +1,18 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdftex 2014.4.28)  28 APR 2014 17:53
+entering extended mode
+**H:/.das/Desktop/exploitation-master/Project/Report/First_Report/Special/First
+_References.bib
+
+(H:/.das/Desktop/exploitation-master/Project/Report/First_Report/Special/First_
+References.bib
+! Undefined control sequence.
+l.32   howpublished = {\url
+                           {http://www.encyclopediaofmath.org/index.php/Affi...
+
+? 
+! Emergency stop.
+l.32   howpublished = {\url
+                           {http://www.encyclopediaofmath.org/index.php/Affi...
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!

@@ -1,0 +1,51 @@
+%% ----------------------------------------------------------------
+%% Introduction.tex
+%% ---------------------------------------------------------------- 
+
+
+%\chapter[Introduction]{Introduction} \label{Chapter:Introduction}
+\section{Introduction} \label{Section:Introduction}
+In this exercise, the final goal is to design, test and demonstrate an 8-bits affine transformation implementation of picoMIPS on an Altera FPGA development system. A simple affine transform\cite{affine} can be defined as such: 
+\begin{align}
+	{x2 \choose y2} = A \times {x1 \choose y1} + B
+\end{align}
+
+The specific A and B datasets were chosen for the demonstration in this exercise, which are:
+\begin{align}
+ A = \begin{bmatrix}
+       0.75 & 0.5           \\[0.3em]
+       -0.5 & 0.75          \\[0.3em]
+     \end{bmatrix}   		
+%\end{align}	
+%\begin{align}	
+ B= \begin{bmatrix}
+        20          \\[0.3em]
+       -20          \\[0.3em]
+     \end{bmatrix}
+\end{align}
+
+In the picoMIPS program design, the six transformation constants must be included as immediate literals. The switches SW0-7 on the FPGA development system are required for Pixel coordinates input. The LEDs LED0-7 are assigned to display the transformation result. Switch SW8 controls the handshaking functionality to complete the transform sequence, as described below. The switch SW9 is used as an active low reset.
+\begin{table}[H]
+%
+\centering % used for centering table
+\begin{tabular}{ll}
+\hline
+1 & When SW8 is on read the coordinate x1 from SW{[}7:0{]}, otherwise wait. \\ 
+2 & Wait until SW8 is off                                                   \\
+3 & When SW8 is on read the coordinate y1 from SW{[}7:0{]}, otherwise wait  \\
+4 & Wait until SW8 is off                                                   \\
+5 & Execute the affine transformation for x2 and display it on LED{[}7:0{]}        \\
+6 & Wait until SW8 is on                                                    \\
+7 & Execute the affine transformation for y2 and display it on LED{[}7:0{]}                                              \\
+8 & Wait until SW8 is off. If so go back to step 1                          \\ \hline
+
+\end{tabular}
+\caption{Instruction Set} % title of Table
+\end{table}
+During the preparation, the picoMIPS architecture and SystemVerilog code examples of each picoMIPS block that are provided by ELEC6016 lecture slides were well studied and tested in the Modelsim. During the first stage of the design, a set of Systemverilog codes were developed based on the preparation and a successful working design was achieved to fulfil the basic requirement of the exercise. Separate testbenchs for the individual modules and the top-level design were also implemented and simulated in Modelsim to verify the correct functionality of the design. The input and output 8‐bit data were assigned to the designated ports. All modules were successfully synthesised and programed into the FPGA Development System. \\\\
+At the second stage of the development, the goal was focused on optimizing the original design to reduce the cost figure as much as possible. The cost figure is defined as:\\\\
+                    Cost = number of Logic Elements used + 30 x Kbits of RAM used\\\\
+The optimization includes the usage of the synchronous RAM and simplification of the instruction set and other picoMIPS modules. As the result, the cost figure was successfully reduced from 132 to 76.\\\\
+This report is split into two major sections. Section 2-4 will describe the original design and section 6 will discuss the AE0 synthesis and optimized design in detail. The cost figure discussion for each design will be included in conclusion section.
+
+

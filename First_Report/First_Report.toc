@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.2}
+\contentsline {section}{\numberline {2}Introduction}{5}{section.6}
+\contentsline {section}{\numberline {3}Instruction set}{6}{section.10}
+\contentsline {subsection}{\numberline {3.1}Instruction format}{6}{subsection.11}
+\contentsline {subsection}{\numberline {3.2}Control Instruction}{7}{subsection.14}
+\contentsline {subsection}{\numberline {3.3}Arithmetic and register instruction}{7}{subsection.15}
+\contentsline {section}{\numberline {4}Program Counter, Program memory and Decoder design}{7}{section.16}
+\contentsline {subsection}{\numberline {4.1}Program Counter}{7}{subsection.17}
+\contentsline {subsection}{\numberline {4.2}Program Memory}{8}{subsection.57}
+\contentsline {subsection}{\numberline {4.3}Decoder}{10}{subsection.98}
+\contentsline {section}{\numberline {5}General Purpose Register file design}{14}{section.223}
+\contentsline {section}{\numberline {6}Arithmetic Logic Unit (ALU) and Multiplier design}{17}{section.261}
+\contentsline {subsection}{\numberline {6.1}Multiplier}{17}{subsection.262}
+\contentsline {section}{\numberline {7}Altera DE0 implementation and optimization}{20}{section.298}
+\contentsline {subsection}{\numberline {7.1}Original design DE0 implementaion}{20}{subsection.299}
+\contentsline {subsection}{\numberline {7.2}General purpose register optimization}{23}{subsection.352}
+\contentsline {subsection}{\numberline {7.3}Decoder optimization}{25}{subsection.355}
+\contentsline {subsection}{\numberline {7.4}Instruction optimization}{27}{subsection.412}
+\contentsline {subsection}{\numberline {7.5}Improved design DE0 implementaion}{27}{subsection.414}
+\contentsline {section}{\numberline {8}Conclusions}{31}{section.418}

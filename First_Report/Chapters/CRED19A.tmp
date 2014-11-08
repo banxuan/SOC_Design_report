@@ -1,0 +1,33 @@
+%% ----------------------------------------------------------------
+%% Introduction.tex
+%% ---------------------------------------------------------------- 
+
+
+%\chapter[Introduction]{Introduction} \label{Chapter:Introduction}
+\chapter{Introduction} \label{Section:Introduction}
+
+In this exercise, the final goal is to design, test and demonstrate an 8-bits affine transformation implementation of picoMIPS on an Altera FPGA development system. A simple affine transform can be defined as such: 
+\begin{align}
+	{x2 \choose y2} = A \times {x1 \choose y1} + B
+\end{align}
+
+The specific A and B datasets are chosen for the demonstration in this exercise, which are:
+\begin{align}
+ A = \begin{bmatrix}
+       0.75 & 0.5           \\[0.3em]
+       -0.5 & 0.75          \\[0.3em]
+     \end{bmatrix}
+\end{align}	
+\begin{align}	
+		B= \begin{bmatrix}
+        20          \\[0.3em]
+       -20          \\[0.3em]
+     \end{bmatrix}
+\end{align}
+
+In the machine level picoMIPS program, the six transformation constants must be included as immediate literals. The switches SW0-SW7 on the FPGA development system are assigned to input Pixel coordinates. The LEDS LED0-LED7 will display the resulting pixel coordinates after the transformation. Switch SW8 controls the handshaking functionality for completing the transform sequence, and the switch SW9 acts as an active low reset.\\
+During the preparation, the picoMIPS architecture and SystemVerilog coding suggestions for each picoMIPS blocks provided by ELEC6016 lecture slides were well studied and tested in the Modelsim. During the first stage of the design, the objective was to achieve a successful working design. The Systemverilog codes used in the preparation was re-modified to serve the purpose of this exercise. The separate testbenchs for each module and the whole design were implemented and simulated in Modelsim to verify the functionality of the individual units in the design. On the top level synthesis, the input 8‐bit data and to output 8-bit results were addressed as in the project requirement. All modules were synthesised in Altera Quartus and successfully programed on the FPGA Development System. \\
+In the second stage of the development, the goal was focused on optimizing the previous design to achieve minimum the architecture size and reduce the cost figure, which is defined as:\\\\
+Cost = number of Logic Elements used + 30 x Kbits of RAM used\\\\
+The optimization includes the usage of the RAM with synchronized read and simplification of the instruction set and other picoMIPS modules.  As the result, the cost figure was successfully reduced from 184 to 75.\\
+This report would therefore be split into two major sections. Each section will describe the original design and the improvement based on it in detail. Cost figure for each design will be included in conclusion section.\\

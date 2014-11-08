@@ -1,0 +1,374 @@
+%% ----------------------------------------------------------------
+%% Body.tex
+%% ---------------------------------------------------------------- 
+
+
+%\chapter[ReportBody]{Design} \label{Chapter:ReportBody}
+\section{Instruction set} \label{Section:Instruction}
+
+\subsection{Instruction format}\label{Section:Instruction format}
+During the project, there were seven types of instructions have been implemented. In the original design, each instruction was composed of 4 bits operand, 3 bits source and destination register address and 8 bits immediate (18 bits in total). \textcolor{red}{As indicated in the picoMIPS architecture diagram ??}, the opcode bits were assigned to the decoder. Source and destination address bits were allocated to general purpose register. Immediate bits were connected to the ALU for immediate arithmetic operation. After the improvement, the instruction size was reduced to 11 bits, with only 6 bits Immediate, 3 bits of operand code and 2 bits register address. All Instruction types are summarised in table 1.
+
+
+\begin{table}[ht]
+\caption{Instruction Set} % title of Table
+\centering % used for centering table
+\begin{tabular}{c c c } % centered columns (4 columns)
+\hline\hline %inserts double horizontal lines
+Instruction                 & Acronym     & Description \\ [0.5ex] % inserts table
+%heading
+\hline % inserts single horizontal line
+Addition                    & ADD         & \(Rd \leftarrow Rd + Rs \)  \\
+Addition immediate          & ADDI        & \(Rd \leftarrow Rd + Imm\)      \\
+Multiply                    & MUX         & \(Rd \leftarrow Rd \times Rs\)      \\
+Multiply immediate          & MUXI        & \(Rd \leftarrow Rd \times Imm\)      \\
+Wait while SW[8]= 0         & WAIT0       & \(if(SW[8] = 1) PC++     \)          \\
+Wait while SW[8]= 1         & WAIT1       & \(if(SW[8] = 0) PC++  \)         \\
+Absolute jump               & JUMP        & \(PC \leftarrow 0  \)             \\ [1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:instr} % is used to refer this table in the text
+\end{table}
+
+
+\subsection{Control Instruction} \label{SubSection:Control Instruction}
+
+The affine transform does not require any decisions based on the data. Therefore there is no flag needed, neither are the conditional branches. The only necessary control signal is for the handshaking procedure, and it comes from the switch SW8. The function of the control signal is simply allowing the program counter to increment at the correct moment. In this case, instruction WAIT0 and WAIT1 are implemented to wait control value from switch SW8. 
+At the end of the affine transform, an absolute jump is essential for returning the processor back to the start. The absolute jump replaces the value of the program counter with last four bits in the instruction, which enables the processor to jump to any step in the program memory. In this project, it only resets the program counter and clear the immediate with 0s’. But meanwhile it accesses the memory location that contains the result of last calculation to illustrate its value on the FPGA LEDs.
+
+
+\subsection{Arithmetic and register instruction} \label{SubSection:Arithmetic and register instruction}
+In order to accomplish an affine transform, at least two kinds of arithmetic are needed: addition and multiplication. In the processor, the corresponding arithmetic instructions were \textbf{ADD} and \textbf{MUX}. They consist of the operand codes that will deliver operating commands to Arithmetic Logic Unit (ALU), designated source and destination register addresses. In addition, instruction \textbf{ADDI} and \textbf{MUXI} were developed for the arithmetic with signed immediate values. Those instructions select build-in immediate values rather than the ones from source register. They are very convenient when doing the calculations with matrix constants. No subtract instruction was implemented to reduce the size of the ALU and no sign extension is needed for the calculation operation.\\
+At the beginning of the affine transform, x1 and y1 values are provided by the switches. The processor needs to read and store them in the certain memory locations. Therefore a store instruction \textbf{LOAD} is implemented for this purpose. Since the register will also be accessed in conjunction with other arithmetic instructions, the register addresses are included in those instructions. 
+ 
+	
+\section{Program Counter} \label{Program Counter}
+
+%\subsection{BT Group Plc}
+Program counter is the simplest sequential logic module in the system. The counter will increment every clock cycle if the increment control signal \textbf{PCincr} is high. If the \textbf{JUMP} instruction is called, the absolute branch control signal \textbf{PCabsbranch} will force the counter to jump to the address given by the instruction. In this case, it would be the start position of the operation. The program counter size was set to 5 bits, so it can count up to 32 instructions. 
+
+
+\lstset{language=verilog,caption={Testbench for program counter},label=pctest}
+\begin{lstlisting}
+module pctest;
+ parameter Psize = 5;
+ logic clk, reset, PCincr,PCabsbranch;
+ logic [Psize-1:0] Branchaddr;
+ logic [Psize-1 : 0]PCout;
+ 
+pc  #(.Psize(Psize)) P(.*);
+
+//------------- code starts here ---------0
+//clock
+initial
+begin
+  clk =  0;
+  #5ns  forever #5ns clk = ~clk;
+end
+
+initial
+begin
+  //default
+ reset = 1;
+ PCincr = 0;
+ Branchaddr = 4'b0000; 
+ PCabsbranch = 0;
+  
+  // test all functions
+  #10 reset = 0; 
+  #10 PCincr = 1; //start counting
+  #10 PCincr = 0; //stop counting
+  #10 PCincr = 1;
+  #50 PCabsbranch = 1;PCincr = 0; //JUMP
+  #10 PCabsbranch = 0;
+  #10 PCincr = 1;
+
+end //initial
+
+endmodule //end of pctest
+
+\end{lstlisting}
+
+
+\begin{figure}[ht!]
+		\centering
+		%\includegraphics[width = 0.9\textwidth]{Figures/Overview_of_presentations}
+		\includegraphics[width = \textwidth]{Figures/PC}		
+		\caption[Additional Notes]{Testbench result of Program Counter}
+		\label {fig:pc}
+
+\end{figure}
+
+The testbench and simulation result of program counter are shown in Figure ~\ref{fig:pc} and listing ~\ref{pctest}. At 20ns, the increment control signal PCincr went high so the counter started to count up. At 30ns, PCincr went low so counter stopped counting at the current clock cycle. At 90ns, the testbench simulated a \textbf{JUMP} instruction: \textbf{PCincr} became low and absoluate branch control signal \textbf{PCabsbranch} went high. In this case, the counter loads the address from Branch address \textbf{Brachaddr} (0000) and restarts the counting.\\
+
+The RTL level synthesis of program counter is shown in Figure ~\ref{fig:counter}.
+
+		\begin{figure}[ht!]
+		\centering
+		%\includegraphics[width = 0.9\textwidth]{Figures/Overview_of_presentations}
+		\includegraphics[width = \textwidth]{Figures/counter}		
+		\caption{RTL synthesis of Program Counter}
+		\label {fig:counter}
+
+	\end{figure}
+
+\section{Program Memory} \label{Program Memory}
+
+Program memory contains a RAM with synchronous read. It uses the address sent by program counter as the input. The address extracts the corresponding instruction inside the memory to the output. All the instructions were decoded in hexadecimal format and stored in the separate hex file \textbf{prog.hex}. During the initiation of the program memory, this file was loaded into the program RAM. The program address width and instruction length were acquired for the declaration of the program memory.\\
+
+The testbench codes are demonstrated in listing ~\ref{pmtest}.\\
+
+\lstset{language=verilog,caption={Testbench for program Memory},label=pmtest}
+\begin{lstlisting}
+
+module progtest;
+parameter Psize = 5, Isize = 11;
+logic [Psize-1:0] address;
+logic [Isize-1:0] I; // I - instruction code
+
+// program memory declaration, note: 1<<n is same as 2^n
+logic [Isize:0] progMem[ (1<<Psize)-1:0];
+
+prog #(.Psize(Psize),.Isize(Isize)) r(.*);
+
+//------------- code starts here ---------
+initial
+begin
+  //try all the memory address
+  address [Psize-1:0] = 5'h00;
+  #10ns  address [Psize-1:0] = 5'h01; 
+  #10ns  address [Psize-1:0] = 5'h02;
+  #10ns  address [Psize-1:0] = 5'h03;
+  #10ns  address [Psize-1:0] = 5'h04;
+  #10ns  address [Psize-1:0] = 5'h05;
+  #10ns  address [Psize-1:0] = 5'h06;
+  #10ns  address [Psize-1:0] = 5'h07;
+  #10ns  address [Psize-1:0] = 5'h08;
+  #10ns  address [Psize-1:0] = 5'h09;
+  #10ns  address [Psize-1:0] = 5'h0A;
+  #10ns  address [Psize-1:0] = 5'h0B;
+  #10ns  address [Psize-1:0] = 5'h0C;
+  #10ns  address [Psize-1:0] = 5'h0D;
+  #10ns  address [Psize-1:0] = 5'h0E; 
+  #10ns  address [Psize-1:0] = 5'h0F; 
+  #10ns  address [Psize-1:0] = 5'h10; 
+  #10ns  address [Psize-1:0] = 5'h11;
+  #10ns  address [Psize-1:0] = 5'h12;              
+end
+
+endmodule // module regstest
+
+\end{lstlisting}
+
+\begin{figure}[ht!]
+		\centering
+		%\includegraphics[width = 0.9\textwidth]{Figures/Overview_of_presentations}
+		\includegraphics[width = \textwidth]{Figures/PM}		
+		\caption[Additional Notes]{Testbench result of Program Memory}
+		\label {fig:pm}
+
+\end{figure}
+
+As shown in Figure ~\ref{fig:pm}, when the testbench feed an address to the program memory, the corresponding instruction was extracted at the output. The testbench attempted all the memory address and outputted instructions were verified correct according to the hex file \textbf{prog.hex}. \\
+
+The RTL synthesis of program memory is shown in Figure ~\ref{fig:pm} .
+
+		\begin{figure}[ht!]
+		\centering
+		%\includegraphics[width = 0.9\textwidth]{Figures/Overview_of_presentations}
+		\includegraphics[width = \textwidth]{Figures/progmem}		
+		\caption{RTL synthesis of Program Memory}
+		\label {fig:memory}
+
+	\end{figure}
+
+\section{Decoder} \label{Decoder}
+The decoder was implemented as a combinational logic. It decodes the opcodes, which is the first four bits of the instruction. Eight types of instructions mentioned in the instruction chapter will be read from the program memory and translate into the control signals for ALU, program counter and general purpose register. The decoder also reads the control signal from switch SW[8] on the top level so the instruction \textbf{WAIT0} and \textbf{WAIT1} can be executed correctly. If an unexpected opcode is provided in the decoder, an error message will display for the debugging. Each opcode was defined in file \textbf{opcodes.sv}. So it is easier to recognize and edit during the programming. ALU function control signals were defined in file \textbf{alucodes.sv} for the same purpose when programming the arithmetic opcodes. \\
+ 
+The opcode part of the decoder code is show in the listing ~\ref{decoder}. Opcode and ALU code are shown in listing ~\ref{opcode} and ~\ref{alucode}.
+
+\lstset{language=verilog,caption={Decoder},label=decoder}
+\begin{lstlisting}
+
+module decoder;
+.....
+ case(opcode)
+     //do nothing
+     `NOP: PCincr = 1'b1;
+		
+     //register-register add		
+      `ADD:begin
+	        w = 1'b1; // write result to dest register
+	        PCincr = 1'b1;
+	        ALUfunc = `RADD;
+	      end
+			
+		 //register-immediate add
+	     `ADDI:begin
+	         w = 1'b1; 
+			     imm = 1'b1; // select immediate operand
+			     PCincr = 1'b1;
+			     ALUfunc = `RADD;
+		    end	 		
+				
+     //register-register multiply
+	 	   `MUX: begin 
+	         w = 1'b1; // write result to dest register
+	         ALUfunc = `RMUX;
+	         PCincr = 1'b1;
+	      end	
+		 
+		 //register-immediate multiply		
+	     `MUXI: begin 
+	          w = 1'b1; 
+	          imm = 1'b1;
+	          ALUfunc = `RMUX;
+	          PCincr = 1'b1;
+	      end	 
+				
+		 //wait while 1			
+	     `WAIT1: begin 
+	         if(SW == 1'b1) //if SW[8] == 0 PC++
+	          begin
+	          PCincr = 1'b0;
+	          sel = 1'b0;
+	         end
+	         else
+	          begin
+	          PCincr = 1'b1;	     
+	          sel = 1'b0;
+	         end
+	      end
+				
+		 //wait while 0		
+	     `WAIT0: begin   
+	         if(SW == 1'b1) //if SW[8] == 1 PC++
+	          begin
+	          PCincr = 1'b1;
+	          sel = 1'b0;
+	          end
+	         else
+	          begin
+	          PCincr = 1'b0;
+	          sel = 1'b0;	
+	          end     
+	      end
+				
+ 	   //Read Switches[7:0] and load into register
+	     `LOAD: begin
+	         w = 1'b1;
+	         PCincr = 1'b1;
+	         sel = 1'b1;
+	     end 
+			
+     //JUMP (unconditional absolute branch)
+	     `J:  begin
+	         PCincr = 1'b0; 
+					 PCabsbranch = 1'b1;
+	     end
+	      
+	   default:
+	   error("unimplemented opcode"); 
+  endcase // opcode	
+endmodule
+
+\end{lstlisting}
+
+\lstset{language=verilog,caption={opcode.sv},label=opcode}
+\begin{lstlisting}
+`define NOP   4'b0000
+`define ADD   4'b0001
+`define ADDI  4'b0010
+`define J     4'b0100
+`define MUX   4'b0101
+`define MUXI  4'b0110
+`define WAIT0 4'b0111
+`define WAIT1 4'b1000
+`define LOAD  4'b1001
+\end{lstlisting}
+
+\lstset{language=verilog,caption={alucode.sv},label=alucode}
+\begin{lstlisting}
+// alu function bits
+`define Fsize  3
+
+`define RA    3'b000
+`define RB    3'b001
+`define RADD  3'b010
+`define RSUB  3'b011 
+`define RMUX  3'b100
+\end{lstlisting}
+
+Similar to program memory, the testbench examines the control signals can be decoded correctly for all types of opcode, as shown in listing ~\ref{DCtest} .
+
+\lstset{language=verilog,caption={Decoder testbench},label=DCtest}
+\begin{lstlisting}
+`include "alucodes.sv"
+`include "opcodes.sv"
+
+module decodertest;
+
+logic [3:0] opcode; // top 6 bits of instruction
+logic [2:0] ALUfunc;
+logic SW;
+logic PCincr,imm,w,PCabsbranch,sel;
+
+decoder c(.*);
+//------------- code starts here ---------
+
+initial 
+begin
+  SW = 0;	
+  #10ns opcode =4'b0111; //WAIT0
+  #10ns SW=1; 
+  #10ns opcode =4'b1000; //WAIT1
+  #10ns SW=0;
+  #10ns opcode =4'b1001;
+  #10ns opcode =4'b0110;
+  #10ns opcode =4'b0001;
+  #10ns opcode =4'b0010;
+  #10ns opcode =4'b0100;
+  end
+endmodule 
+
+\end{lstlisting}
+
+\begin{figure}[ht!]
+		\centering
+		%\includegraphics[width = 0.9\textwidth]{Figures/Overview_of_presentations}
+		\includegraphics[width = \textwidth]{Figures/DC}		
+		\caption{Simulation results of Decoder}
+		\label {fig:DCtest}
+\end{figure}
+
+From the simulation results in Figure ~\ref{fig:DCtest}, at 0ns, the program counter does not increment (PCincr = 0) in default state (no opcode). When the opcode is \textbf{ WAIT0} (at 10ns) or \textbf{WAIT1} (at 30ns), the program counter signal \textbf{PCincr} will depend on switch signal \textbf{SW}. \\
+
+At 50ns, the opcode is \textbf{LOAD}, the "write-to-register" signal \textbf{w} and "read-from-switches[7:0]" signal \textbf{sel} rises to high. Starting from 60ns, the decoder outputs the ALU control signal according to the arithmetic opcodes, along with the write signal to register. If the arithmetic opcodes involve the immediate value (at 60ns and 80ns, the control signal \textbf{imm} will rise to high. The last opcode for the simulation is \textbf{JUMP}, therefore the absolute branch signal \textbf{PCabsbranch} becomes high.\\
+
+The RTL synthesis is shown in Figure ~\ref{fig:decoder}.
+
+\begin{figure}[ht!]
+		\centering
+		%\includegraphics[width = 0.9\textwidth]{Figures/Overview_of_presentations}
+		\includegraphics[width = 0.7\textwidth]{Figures/decoder}		
+		\caption{RTL synthesis of Decoder}
+		\label {fig:decoder}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
