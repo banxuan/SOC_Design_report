@@ -1,0 +1,15 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: ReportMain.aux
+A level-1 auxiliary file: Chapters/Introduction.aux
+A level-1 auxiliary file: Chapters/DesignandOPT.aux
+A level-1 auxiliary file: Chapters/Testing.aux
+A level-1 auxiliary file: Chapters/Variability.aux
+A level-1 auxiliary file: Chapters/Conclusions.aux
+The style file: ieeetran.bst
+I found no \citation commands---while reading file ReportMain.aux
+I found no \bibdata command---while reading file ReportMain.aux
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+(There were 2 error messages)

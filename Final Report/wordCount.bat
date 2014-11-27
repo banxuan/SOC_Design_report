@@ -1,0 +1,5 @@
+texcount -merge -out=wordCount.txt "ReportMain.tex"
+texcount -merge -freq -out=wordFreq.txt "ReportMain.tex"
+texcount -merge -sub=chapter -out=wordCountChap.txt "ReportMain.tex"
+texcount -merge -sub=section -out=wordCountSect.txt "ReportMain.tex"
+texcount -merge -sub=subsection -out=wordCountSubSect.txt "ReportMain.tex"

@@ -1,0 +1,89 @@
+%% ----------------------------------------------------------------
+%% Final_Report.tex
+%% ---------------------------------------------------------------- 
+%%Preamble
+\documentclass{IEEEtran}			 % Use the GDP Report Style
+%\graphicspath{{../Figures/}}   				% Location of your graphics files
+
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{subfigure}
+
+\usepackage{natbib}           					 % Use Natbib style for the refs.
+\usepackage{listings} 							%Package to include source code.
+\usepackage{booktabs}
+\usepackage{pdflscape}       	% Enables the use of landscape orientation of pages
+\usepackage{longtable}        % Enables a table to cut across more than one page
+\usepackage{tabu}         		% Used together with longtable for the above purpose
+\usepackage{multirow}					% Used for the multi column testing table (for power)
+\usepackage{bigstrut}					% Used for the multi column testing table (for power)
+%\usepackage{appendix}			% To use \appendixpage to add Appendix Chapter
+\usepackage{color}				% listings colour
+\usepackage{float}
+\usepackage{fixltx2e}
+\usepackage{hyperref}
+%\newcommand{\plus}{\raisebox{.4\height}{\scalebox{.6}{+}}}	% Used for the small + and - signs in the power testing table
+%\newcommand{\minus}{\raisebox{.4\height}{\scalebox{.8}{-}}} % Used for the small + and - signs in the power testing table
+
+%\lstset{language=C}   					%Set source code language to 'c'
+%\usepackage[inline]{enumitem} 			%In line lists
+%\usepackage{paralist}
+%\usepackage{tensor}			% Enables writing super- and sub- scripts on left hand side
+
+%\definecolor{dkgreen}{rgb}{0,0.6,0}
+%\definecolor{gray}{rgb}{0.5,0.5,0.5}
+%\definecolor{mauve}{rgb}{0.58,0,0.82}
+%\definecolor{lightblue}{rgb}{0.80,0.95,1.0}
+
+
+
+\begin{document}
+\title      {SOC Design Report}
+\author    {
+
+\texorpdfstring {\href{mailto:xb1g10@ecs.soton.ac.uk}{Xuan Ban}} {Xuan Ban}  
+\texorpdfstring {\href{mailto:xb1g10@ecs.soton.ac.uk}{xb1g10}} {xb1g10} \\ 
+    {\href{mailto:xb1g10@ecs.soton.ac.uk}{Yang Huihuang}} 
+	\texorpdfstring  {\href{mailto:hy9g10@ecs.soton.ac.uk}{hy9g10}} {hy9g10} \\   
+    {\href{mailto:xb1g10@ecs.soton.ac.uk}{Dedic Charlie}} 
+	\texorpdfstring  {\href{mailto:cd2g11@ecs.soton.ac.uk}{cd2g10}} {cd2g11} {23922516} \\
+    {\href{mailto:xb1g10@ecs.soton.ac.uk}{Wang Chu}}             
+	\texorpdfstring  {\href{mailto:cd2g10@ecs.soton.ac.uk}{cw9g10}} {cw9g10} \\
+	Group 1
+            }
+\date       {\today}
+
+\maketitle
+
+\begin{abstract}
+Abstract goes here. Use this latex template as our report template.
+\end{abstract}
+
+
+
+%% ----------------------------------------------------------------
+\include{Chapters/Introduction}
+\include{Chapters/DesignandOPT}
+\include{Chapters/Testing}
+\include{Chapters/Variability}
+\include{Chapters/Conclusions}
+
+
+
+%\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{ieeetran}
+%\bibliography{Special/First_References}
+%\end{document}
+%% ----------------------------------------------------------------
+
+
+%\appendix
+%\appendixpage
+%\addappheadtotoc
+%\include{Appendices/AppendixA}
+%\include{Appendices/AppendixB}
+%\include{Appendices/AppendixC}
+%\include{Appendices/AppendixD}
+%\include{Appendices/AppendixE}
+
+\end{document}

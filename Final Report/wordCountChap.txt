@@ -1,0 +1,18 @@
+File: ReportMain.tex
+Encoding: ascii
+Words in text: 945
+Words in headers: 73
+Words outside text (captions, etc.): 38
+Number of headers: 37
+Number of floats/tables/figures: 10
+Number of math inlines: 11
+Number of math displayed: 0
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  11+4+0 (2/0/0/0) _top_
+  0+1+0 (1/0/0/0) Chapter: Outline
+  934+23+18 (11/6/11/0) Chapter: Design and Optimisation
+  0+21+20 (11/4/0/0) Chapter: Testing
+  0+23+0 (11/0/0/0) Chapter: Impact of Variablility
+  0+1+0 (1/0/0/0) Chapter: Conclusions
+

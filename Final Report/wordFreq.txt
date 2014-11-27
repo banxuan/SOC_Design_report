@@ -1,0 +1,409 @@
+File: ReportMain.tex
+Encoding: ascii
+Words in text: 945
+Words in headers: 73
+Words outside text (captions, etc.): 38
+Number of headers: 37
+Number of floats/tables/figures: 10
+Number of math inlines: 11
+Number of math displayed: 0
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  11+4+0 (2/0/0/0) _top_
+  0+1+0 (1/0/0/0) Chapter: Outline
+  0+3+0 (1/0/0/0) Chapter: Design and Optimisation
+  0+1+0 (1/0/0/0) Section: NAND
+  0+1+0 (1/0/0/0) Section: NOR2
+  0+1+0 (1/0/0/0) Section: XOR2
+  397+1+10 (1/3/3/0) Section: DFF
+  359+5+4 (1/2/7/0) Section: Duel Edge Triggered Flip Flop
+  0+2+0 (1/0/0/0) Section: C Element
+  178+3+4 (1/1/1/0) Section: Dual Rail AND
+  0+2+0 (1/0/0/0) Section: 1-bit Subtractor
+  0+2+0 (1/0/0/0) Section: 2-to-1 Multiplexor
+  0+2+0 (1/0/0/0) Section: Mutex Element
+  0+1+0 (1/0/0/0) Chapter: Testing
+  0+1+0 (1/0/0/0) Section: NAND
+  0+1+0 (1/0/0/0) Section: NOR2
+  0+1+0 (1/0/0/0) Section: XOR2
+  0+1+4 (1/1/0/0) Section: DFF
+  0+5+4 (1/1/0/0) Section: Duel Edge Triggered Flip Flop
+  0+2+0 (1/0/0/0) Section: C Element
+  0+3+12 (1/2/0/0) Section: Dual Rail AND
+  0+2+0 (1/0/0/0) Section: 1-bit Subtractor
+  0+2+0 (1/0/0/0) Section: 2-to-1 Multiplexor
+  0+2+0 (1/0/0/0) Section: Mutex Element
+  0+3+0 (1/0/0/0) Chapter: Impact of Variablility
+  0+1+0 (1/0/0/0) Section: NAND
+  0+1+0 (1/0/0/0) Section: NOR2
+  0+1+0 (1/0/0/0) Section: XOR2
+  0+1+0 (1/0/0/0) Section: DFF
+  0+5+0 (1/0/0/0) Section: Duel Edge Triggered Flip Flop
+  0+2+0 (1/0/0/0) Section: C Element
+  0+3+0 (1/0/0/0) Section: Dual Rail AND
+  0+2+0 (1/0/0/0) Section: 1-bit Subtractor
+  0+2+0 (1/0/0/0) Section: 2-to-1 Multiplexor
+  0+2+0 (1/0/0/0) Section: Mutex Element
+  0+1+0 (1/0/0/0) Chapter: Conclusions
+
+Word: Freq
+All words: 1055
+---
+the: 78
+of: 34
+and: 34
+as: 24
+was: 23
+is: 23
+to: 19
+a: 17
+for: 17
+this: 16
+in: 14
+gate: 13
+design: 12
+layout: 10
+gates: 9
+m: 9
+transmission: 9
+Dual: 8
+were: 8
+that: 8
+rail: 8
+3: 8
+DFF: 7
+on: 7
+element: 7
+circuit: 7
+schematic: 7
+it: 7
+not: 7
+only: 6
+size: 6
+area: 6
+NMOS: 6
+PMOS: 6
+be: 6
+between: 6
+inverter: 5
+speed: 5
+by: 5
+there: 5
+width: 5
+flip: 5
+ratio: 5
+using: 5
+chosen: 5
+DETFF: 5
+2: 5
+however: 5
+large: 5
+transistors: 4
+c-element: 4
+used: 4
+figure: 4
+time: 4
+NAND: 4
+Flop: 4
+values: 4
+produced: 4
+Triggered: 4
+test: 4
+transistor: 4
+rise: 4
+minimum: 4
+NW: 4
+Pwidth: 4
+considered: 4
+at: 4
+Edge: 4
+these: 3
+when: 3
+where: 3
+NOR2: 3
+Mutex: 3
+goal: 3
+terms: 3
+disparity: 3
+XOR2: 3
+out: 3
+1-bit: 3
+sizes: 3
+2-to-1: 3
+which: 3
+Subtractor: 3
+each: 3
+but: 3
+small: 3
+Nwidth: 3
+parameters: 3
+C: 3
+QN: 3
+its: 3
+interconnects: 3
+output: 3
+layer: 3
+one: 3
+meaning: 3
+set: 3
+times: 3
+such: 3
+Duel: 3
+high: 3
+space: 3
+4: 3
+Multiplexor: 3
+Trans: 2
+slave: 2
+them: 2
+technology: 2
+shown: 2
+much: 2
+fact: 2
+placed: 2
+correct: 2
+total: 2
+Inverters: 2
+maximum: 2
+Inv: 2
+fanout: 2
+option: 2
+reuse: 2
+shows: 2
+has: 2
+behaviour: 2
+fall: 2
+effected: 2
+master: 2
+optimisation: 2
+parameter: 2
+other: 2
+best: 2
+respectively: 2
+use: 2
+results: 2
+performance: 2
+loads: 2
+matching: 2
+required: 2
+also: 2
+due: 2
+simply: 2
+possible: 2
+fixed: 2
+found: 2
+operation: 2
+length: 2
+designed: 2
+template: 2
+because: 2
+input: 2
+based: 2
+with: 2
+incorrect: 2
+from: 2
+particularly: 2
+effect: 2
+an: 2
+integer: 2
+or: 2
+report: 2
+separate: 2
+routing: 2
+0.35: 2
+had: 2
+than: 2
+effective: 2
+unacceptable: 1
+3.2: 1
+fit: 1
+although: 1
+deliver: 1
+consideration: 1
+Conclusions: 1
+11: 1
+constructed: 1
+NOR: 1
+lain: 1
+reduce: 1
+either: 1
+simplicity: 1
+manufacture: 1
+left: 1
+would: 1
+signals: 1
+no: 1
+future: 1
+order: 1
+quite: 1
+wouldn't: 1
+helps: 1
+copied: 1
+CLKN: 1
+may: 1
+add: 1
+versions: 1
+problem: 1
+situation: 1
+saving: 1
+Simulation: 1
+note: 1
+finalised: 1
+created: 1
+giving: 1
+regardless: 1
+Y1: 1
+taking: 1
+turned: 1
+interconnect: 1
+constraints: 1
+strictly: 1
+measured: 1
+sensible: 1
+family: 1
+must: 1
+splitting: 1
+into: 1
+local: 1
+bad: 1
+characteristics: 1
+style: 1
+work: 1
+Initially: 1
+single: 1
+signal: 1
+side: 1
+pull-up: 1
+then: 1
+components: 1
+Y0: 1
+new: 1
+laying: 1
+enough: 1
+revision: 1
+rather: 1
+creating: 1
+composed: 1
+up: 1
+latex: 1
+having: 1
+been: 1
+expanded: 1
+should: 1
+6: 1
+increase: 1
+crowded: 1
+until: 1
+point: 1
+SOC: 1
+restriction: 1
+outputs: 1
+gained: 1
+another: 1
+two: 1
+if: 1
+minimise: 1
+18: 1
+extra: 1
+horizontal: 1
+deemed: 1
+spacing.The: 1
+wells: 1
+20: 1
+specified: 1
+final: 1
+pull: 1
+increased: 1
+too: 1
+populate: 1
+viable: 1
+have: 1
+visible: 1
+extreme: 1
+plot: 1
+necessary: 1
+metal: 1
+easily: 1
+requirement: 1
+value: 1
+contain: 1
+waste: 1
+interleaving: 1
+gave: 1
+areas: 1
+Impact: 1
+they: 1
+lot: 1
+Variablility: 1
+same: 1
+achieved: 1
+fan-outs: 1
+vertically: 1
+us: 1
+limit: 1
+available: 1
+capacitive: 1
+across: 1
+brought: 1
+via: 1
+allow: 1
+Testing: 1
+caused: 1
+distance: 1
+negated: 1
+7: 1
+larger: 1
+DRC: 1
+allows: 1
+our: 1
+MET3: 1
+entire: 1
+transition: 1
+stacked: 1
+some: 1
+here: 1
+goes: 1
+substantial: 1
+smaller: 1
+towards: 1
+propagation: 1
+metrics: 1
+showing: 1
+real: 1
+decision: 1
+any: 1
+allowed: 1
+variations: 1
+superior: 1
+relatively: 1
+amounts: 1
+given: 1
+ceased: 1
+standard: 1
+Outline: 1
+could: 1
+robustness: 1
+matched: 1
+before: 1
+so: 1
+process: 1
+among: 1
+Abstract: 1
+2.4: 1
+most: 1
+world: 1
+are: 1
+17.5: 1
+drive: 1
+4.7: 1
+slightly: 1
+great: 1
+equal: 1
+particular: 1
+1.2: 1
+without: 1
+latch: 1
+initial: 1
+difficult: 1
+widths: 1
+Sum of subset: 1055

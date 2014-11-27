@@ -1,0 +1,48 @@
+File: ReportMain.tex
+Encoding: ascii
+Words in text: 945
+Words in headers: 73
+Words outside text (captions, etc.): 38
+Number of headers: 37
+Number of floats/tables/figures: 10
+Number of math inlines: 11
+Number of math displayed: 0
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  11+4+0 (2/0/0/0) _top_
+  0+1+0 (1/0/0/0) Chapter: Outline
+  0+3+0 (1/0/0/0) Chapter: Design and Optimisation
+  0+1+0 (1/0/0/0) Section: NAND
+  0+1+0 (1/0/0/0) Section: NOR2
+  0+1+0 (1/0/0/0) Section: XOR2
+  397+1+10 (1/3/3/0) Section: DFF
+  359+5+4 (1/2/7/0) Section: Duel Edge Triggered Flip Flop
+  0+2+0 (1/0/0/0) Section: C Element
+  178+3+4 (1/1/1/0) Section: Dual Rail AND
+  0+2+0 (1/0/0/0) Section: 1-bit Subtractor
+  0+2+0 (1/0/0/0) Section: 2-to-1 Multiplexor
+  0+2+0 (1/0/0/0) Section: Mutex Element
+  0+1+0 (1/0/0/0) Chapter: Testing
+  0+1+0 (1/0/0/0) Section: NAND
+  0+1+0 (1/0/0/0) Section: NOR2
+  0+1+0 (1/0/0/0) Section: XOR2
+  0+1+4 (1/1/0/0) Section: DFF
+  0+5+4 (1/1/0/0) Section: Duel Edge Triggered Flip Flop
+  0+2+0 (1/0/0/0) Section: C Element
+  0+3+12 (1/2/0/0) Section: Dual Rail AND
+  0+2+0 (1/0/0/0) Section: 1-bit Subtractor
+  0+2+0 (1/0/0/0) Section: 2-to-1 Multiplexor
+  0+2+0 (1/0/0/0) Section: Mutex Element
+  0+3+0 (1/0/0/0) Chapter: Impact of Variablility
+  0+1+0 (1/0/0/0) Section: NAND
+  0+1+0 (1/0/0/0) Section: NOR2
+  0+1+0 (1/0/0/0) Section: XOR2
+  0+1+0 (1/0/0/0) Section: DFF
+  0+5+0 (1/0/0/0) Section: Duel Edge Triggered Flip Flop
+  0+2+0 (1/0/0/0) Section: C Element
+  0+3+0 (1/0/0/0) Section: Dual Rail AND
+  0+2+0 (1/0/0/0) Section: 1-bit Subtractor
+  0+2+0 (1/0/0/0) Section: 2-to-1 Multiplexor
+  0+2+0 (1/0/0/0) Section: Mutex Element
+  0+1+0 (1/0/0/0) Chapter: Conclusions
+

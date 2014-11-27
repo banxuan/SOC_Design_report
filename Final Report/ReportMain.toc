@@ -1,0 +1,31 @@
+\contentsline {section}{\numberline {I}NAND}{3}{section.1}
+\contentsline {section}{\numberline {II}NOR2}{3}{section.2}
+\contentsline {section}{\numberline {III}XOR2}{3}{section.3}
+\contentsline {section}{\numberline {IV}DFF}{3}{section.4}
+\contentsline {section}{\numberline {V}Duel Edge Triggered Flip Flop}{3}{section.5}
+\contentsline {section}{\numberline {VI}C Element}{3}{section.6}
+\contentsline {section}{\numberline {VII}Dual Rail AND}{3}{section.7}
+\contentsline {section}{\numberline {VIII}1-bit Subtractor}{3}{section.8}
+\contentsline {section}{\numberline {IX}2-to-1 Multiplexor}{3}{section.9}
+\contentsline {section}{\numberline {X}Mutex Element}{3}{section.10}
+\contentsline {section}{\numberline {XI}Testing}{4}{section.11}
+\contentsline {section}{\numberline {XII}NAND}{4}{section.12}
+\contentsline {section}{\numberline {XIII}NOR2}{4}{section.13}
+\contentsline {section}{\numberline {XIV}XOR2}{4}{section.14}
+\contentsline {section}{\numberline {XV}DFF}{4}{section.15}
+\contentsline {section}{\numberline {XVI}Duel Edge Triggered Flip Flop}{4}{section.16}
+\contentsline {section}{\numberline {XVII}C Element}{4}{section.17}
+\contentsline {section}{\numberline {XVIII}Dual Rail AND}{4}{section.18}
+\contentsline {section}{\numberline {XIX}1-bit Subtractor}{4}{section.19}
+\contentsline {section}{\numberline {XX}2-to-1 Multiplexor}{4}{section.20}
+\contentsline {section}{\numberline {XXI}Mutex Element}{4}{section.21}
+\contentsline {section}{\numberline {XXII}NAND}{5}{section.22}
+\contentsline {section}{\numberline {XXIII}NOR2}{5}{section.23}
+\contentsline {section}{\numberline {XXIV}XOR2}{5}{section.24}
+\contentsline {section}{\numberline {XXV}DFF}{5}{section.25}
+\contentsline {section}{\numberline {XXVI}Duel Edge Triggered Flip Flop}{5}{section.26}
+\contentsline {section}{\numberline {XXVII}C Element}{5}{section.27}
+\contentsline {section}{\numberline {XXVIII}Dual Rail AND}{5}{section.28}
+\contentsline {section}{\numberline {XXIX}1-bit Subtractor}{5}{section.29}
+\contentsline {section}{\numberline {XXX}2-to-1 Multiplexor}{5}{section.30}
+\contentsline {section}{\numberline {XXXI}Mutex Element}{5}{section.31}
