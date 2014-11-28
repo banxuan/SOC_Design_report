@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.6)  27 NOV 2014 18:36
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.6)  28 NOV 2014 14:11
 entering extended mode
 **ReportMain.tex
 
@@ -436,17 +436,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip59
 )
 ("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\ReportMain.a
-ux"
-("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\Chapters/Int
-roduction.aux")
-("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\Chapters/Des
-ignandOPT.aux")
-("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\Chapters/Tes
-ting.aux")
-("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\Chapters/Var
-iability.aux")
-("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\Chapters/Con
-clusions.aux"))
+ux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
 LaTeX Font Info:    ... okay on input line 40.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
@@ -461,8 +451,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
 LaTeX Font Info:    ... okay on input line 40.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
 LaTeX Font Info:    ... okay on input line 40.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count134
 \scratchdimen=\dimen158
@@ -496,179 +485,213 @@ ut")
 ("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\ReportMain.o
 ut")
 \@outlinefile=\write3
- [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-
-
-]
 ("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\Chapters/Int
-roduction.tex") [2
-
-
-]
+roduction.tex")
 ("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\Chapters/Des
 ignandOPT.tex"
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 11.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 11.
- <Figures/DFFSchem.png, id=152, 1020.06094pt x 338.01282pt>
+ <Figures/DFFSchem.png, id=160, 1020.06094pt x 338.01282pt>
 File: Figures/DFFSchem.png Graphic file (type png)
 
 <use Figures/DFFSchem.png>
 Package pdftex.def Info: Figures/DFFSchem.png used on input line 15.
 (pdftex.def)             Requested size: 232.19843pt x 76.94186pt.
 
-<Figures/DFF1fFLoadTNW.png, id=154, 562.1pt x 483.8075pt>
+<Figures/DFF1fFLoadTNW.png, id=162, 562.1pt x 483.8075pt>
 File: Figures/DFF1fFLoadTNW.png Graphic file (type png)
 
 <use Figures/DFF1fFLoadTNW.png>
 Package pdftex.def Info: Figures/DFF1fFLoadTNW.png used on input line 28.
 (pdftex.def)             Requested size: 116.10315pt x 99.92679pt.
 
-<Figures/DFF1fFLoadINW.png, id=155, 562.1pt x 483.8075pt>
+<Figures/DFF1fFLoadINW.png, id=163, 562.1pt x 483.8075pt>
 File: Figures/DFF1fFLoadINW.png Graphic file (type png)
 
 <use Figures/DFF1fFLoadINW.png>
 Package pdftex.def Info: Figures/DFF1fFLoadINW.png used on input line 31.
 (pdftex.def)             Requested size: 116.10315pt x 99.92679pt.
 
-<Figures/DFFLayout.png, id=156, 2574.61874pt x 313.17pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Figures/DFFLayout.png, id=164, 2574.61874pt x 313.17pt>
 File: Figures/DFFLayout.png Graphic file (type png)
 
 <use Figures/DFFLayout.png>
 Package pdftex.def Info: Figures/DFFLayout.png used on input line 40.
 (pdftex.def)             Requested size: 232.19843pt x 28.24142pt.
 
-<Figures/DETFFSchem.png, id=158, 828.84656pt x 375.65344pt>
+<Figures/DETFFSchem.png, id=166, 828.84656pt x 375.65344pt>
 File: Figures/DETFFSchem.png Graphic file (type png)
 
 <use Figures/DETFFSchem.png>
 Package pdftex.def Info: Figures/DETFFSchem.png used on input line 53.
 (pdftex.def)             Requested size: 232.19843pt x 105.23383pt.
 
-<Figures/DETFFLayout.png, id=159, 1138.2525pt x 311.66437pt>
-File: Figures/DETFFLayout.png Graphic file (type png)
-
-<use Figures/DETFFLayout.png>
-Package pdftex.def Info: Figures/DETFFLayout.png used on input line 62.
-(pdftex.def)             Requested size: 232.19843pt x 63.57773pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
  <C:/Users/Charlie/Dropbox/elec6237/SOC_Design_report/Final Report/Figures/DFFS
 chem.png> <C:/Users/Charlie/Dropbox/elec6237/SOC_Design_report/Final Report/Fig
 ures/DFF1fFLoadTNW.png (PNG copy)> <C:/Users/Charlie/Dropbox/elec6237/SOC_Desig
 n_report/Final Report/Figures/DFF1fFLoadINW.png (PNG copy)> <C:/Users/Charlie/D
-ropbox/elec6237/SOC_Design_report/Final Report/Figures/DFFLayout.png> <C:/Users
-/Charlie/Dropbox/elec6237/SOC_Design_report/Final Report/Figures/DETFFSchem.png
->] <Figures/DualRailANDSchem.png, id=173, 534.49687pt x 233.37187pt>
+ropbox/elec6237/SOC_Design_report/Final Report/Figures/DFFLayout.png>]
+<Figures/DETFFLayout.png, id=183, 1138.2525pt x 311.66437pt>
+File: Figures/DETFFLayout.png Graphic file (type png)
+
+<use Figures/DETFFLayout.png>
+Package pdftex.def Info: Figures/DETFFLayout.png used on input line 62.
+(pdftex.def)             Requested size: 232.19843pt x 63.57773pt.
+
+<Figures/DualRailANDSchem.png, id=185, 534.49687pt x 233.37187pt>
 File: Figures/DualRailANDSchem.png Graphic file (type png)
 
 <use Figures/DualRailANDSchem.png>
 Package pdftex.def Info: Figures/DualRailANDSchem.png used on input line 78.
 (pdftex.def)             Requested size: 232.19843pt x 101.38419pt.
-) [4
-
- <C:/Users/Charlie/Dropbox/elec6237/SOC_Design_report/Final Report/Figures/DETF
-FLayout.png> <C:/Users/Charlie/Dropbox/elec6237/SOC_Design_report/Final Report/
-Figures/DualRailANDSchem.png>]
-("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\Chapters/Tes
-ting.tex" <Figures/DFFTestSchem.png, id=179, 589.4522pt x 188.95593pt>
-File: Figures/DFFTestSchem.png Graphic file (type png)
-
-<use Figures/DFFTestSchem.png>
-Package pdftex.def Info: Figures/DFFTestSchem.png used on input line 14.
-(pdftex.def)             Requested size: 232.19843pt x 74.4335pt.
-
-<Figures/DETFFTestSchem.png, id=180, 777.65532pt x 203.25937pt>
-File: Figures/DETFFTestSchem.png Graphic file (type png)
-
-<use Figures/DETFFTestSchem.png>
-Package pdftex.def Info: Figures/DETFFTestSchem.png used on input line 23.
-(pdftex.def)             Requested size: 232.19843pt x 60.68983pt.
-
-<Figures/DualRailANDTestSchem.png, id=181, 773.13844pt x 317.68687pt>
-File: Figures/DualRailANDTestSchem.png Graphic file (type png)
-
-<use Figures/DualRailANDTestSchem.png>
-Package pdftex.def Info: Figures/DualRailANDTestSchem.png used on input line 34
-.
-(pdftex.def)             Requested size: 232.19843pt x 95.40858pt.
-
-<Figures/DualAndCorrectOperation.png, id=182, 1280.785pt x 824.07875pt>
-File: Figures/DualAndCorrectOperation.png Graphic file (type png)
-
-<use Figures/DualAndCorrectOperation.png>
-Package pdftex.def Info: Figures/DualAndCorrectOperation.png used on input line
- 42.
-(pdftex.def)             Requested size: 232.19843pt x 149.39659pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [5
+)
+("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\Chapters/Tes
+ting.tex" <Figures/DFFTestSchem.png, id=187, 589.4522pt x 188.95593pt>
+File: Figures/DFFTestSchem.png Graphic file (type png)
+
+<use Figures/DFFTestSchem.png>
+Package pdftex.def Info: Figures/DFFTestSchem.png used on input line 16.
+(pdftex.def)             Requested size: 232.19843pt x 74.4335pt.
+
+<Figures/DFFTestFunc.png, id=189, 520.94624pt x 528.47438pt>
+File: Figures/DFFTestFunc.png Graphic file (type png)
+
+<use Figures/DFFTestFunc.png>
+Package pdftex.def Info: Figures/DFFTestFunc.png used on input line 25.
+(pdftex.def)             Requested size: 232.19843pt x 235.55339pt.
 
 
- <C:/Users/Charlie/Dropbox/elec6237/SOC_Design_report/Final Report/Figures/DFFT
-estSchem.png> <C:/Users/Charlie/Dropbox/elec6237/SOC_Design_report/Final Report
-/Figures/DETFFTestSchem.png> <C:/Users/Charlie/Dropbox/elec6237/SOC_Design_repo
-rt/Final Report/Figures/DualRailANDTestSchem.png> <C:/Users/Charlie/Dropbox/ele
-c6237/SOC_Design_report/Final Report/Figures/DualAndCorrectOperation.png (PNG c
-opy)>]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2 <C:/Users/Charlie/Dropbox/elec6237/SOC_Design_report/Final Report/Figures/DE
+TFFSchem.png> <C:/Users/Charlie/Dropbox/elec6237/SOC_Design_report/Final Report
+/Figures/DETFFLayout.png> <C:/Users/Charlie/Dropbox/elec6237/SOC_Design_report/
+Final Report/Figures/DualRailANDSchem.png> <C:/Users/Charlie/Dropbox/elec6237/S
+OC_Design_report/Final Report/Figures/DFFTestSchem.png>]
+<Figures/DFFTestSpeed.png, id=200, 692.5875pt x 282.30469pt>
+File: Figures/DFFTestSpeed.png Graphic file (type png)
+
+<use Figures/DFFTestSpeed.png>
+Package pdftex.def Info: Figures/DFFTestSpeed.png used on input line 36.
+(pdftex.def)             Requested size: 232.19843pt x 94.64696pt.
+
+<Figures/DETFFTestSchem.png, id=203, 1120.185pt x 262.73157pt>
+File: Figures/DETFFTestSchem.png Graphic file (type png)
+
+<use Figures/DETFFTestSchem.png>
+Package pdftex.def Info: Figures/DETFFTestSchem.png used on input line 50.
+(pdftex.def)             Requested size: 232.19843pt x 54.45764pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Figures/DETFFTestFunc.png, id=205, 515.67656pt x 545.03625pt>
+File: Figures/DETFFTestFunc.png Graphic file (type png)
+
+<use Figures/DETFFTestFunc.png>
+Package pdftex.def Info: Figures/DETFFTestFunc.png used on input line 59.
+(pdftex.def)             Requested size: 232.19843pt x 245.41374pt.
+
+<Figures/DETFFTestSpeed.png, id=207, 755.82375pt x 268.00125pt>
+File: Figures/DETFFTestSpeed.png Graphic file (type png)
+
+<use Figures/DETFFTestSpeed.png>
+Package pdftex.def Info: Figures/DETFFTestSpeed.png used on input line 68.
+(pdftex.def)             Requested size: 232.19843pt x 82.33116pt.
+
+Underfull \vbox (badness 1320) has occurred while \output is active []
+
+ [3 <C:/Users/Charlie/Dropbox/elec6237/SOC_Design_report/Final Report/Figures/D
+FFTestFunc.png> <C:/Users/Charlie/Dropbox/elec6237/SOC_Design_report/Final Repo
+rt/Figures/DFFTestSpeed.png> <C:/Users/Charlie/Dropbox/elec6237/SOC_Design_repo
+rt/Final Report/Figures/DETFFTestSchem.png> <C:/Users/Charlie/Dropbox/elec6237/
+SOC_Design_report/Final Report/Figures/DETFFTestFunc.png> <C:/Users/Charlie/Dro
+pbox/elec6237/SOC_Design_report/Final Report/Figures/DETFFTestSpeed.png>]
+<Figures/DualRailANDTestSchem.png, id=217, 773.13844pt x 317.68687pt>
+File: Figures/DualRailANDTestSchem.png Graphic file (type png)
+
+<use Figures/DualRailANDTestSchem.png>
+Package pdftex.def Info: Figures/DualRailANDTestSchem.png used on input line 84
+.
+(pdftex.def)             Requested size: 232.19843pt x 95.40858pt.
+
+<Figures/DualAndCorrectOperation.png, id=219, 1280.785pt x 824.07875pt>
+File: Figures/DualAndCorrectOperation.png Graphic file (type png)
+
+<use Figures/DualAndCorrectOperation.png>
+Package pdftex.def Info: Figures/DualAndCorrectOperation.png used on input line
+ 93.
+(pdftex.def)             Requested size: 232.19843pt x 149.39659pt.
+)
 ("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\Chapters/Var
-iability.tex") [6
+iability.tex" <Figures/DFFvdd.png, id=220, 436.63126pt x 259.7203pt>
+File: Figures/DFFvdd.png Graphic file (type png)
+
+<use Figures/DFFvdd.png>
+Package pdftex.def Info: Figures/DFFvdd.png used on input line 14.
+(pdftex.def)             Requested size: 232.19843pt x 138.11873pt.
 
 
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-]
+<Figures/DETFFvdd.png, id=221, 438.13687pt x 264.99pt>
+File: Figures/DETFFvdd.png Graphic file (type png)
+
+<use Figures/DETFFvdd.png>
+Package pdftex.def Info: Figures/DETFFvdd.png used on input line 26.
+(pdftex.def)             Requested size: 232.19843pt x 140.43594pt.
+)
 ("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\Chapters/Con
-clusions.tex") [7
-
-
-
-]
+clusions.tex")
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 89.
+ [4 <C:/Users/Charlie/Dropbox/elec6237/SOC_Design_report/Final Report/Figures/D
+ualRailANDTestSchem.png> <C:/Users/Charlie/Dropbox/elec6237/SOC_Design_report/F
+inal Report/Figures/DualAndCorrectOperation.png (PNG copy)> <C:/Users/Charlie/D
+ropbox/elec6237/SOC_Design_report/Final Report/Figures/DFFvdd.png> <C:/Users/Ch
+arlie/Dropbox/elec6237/SOC_Design_report/Final Report/Figures/DETFFvdd.png>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 89.
 
 ("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\ReportMain.a
-ux"
-("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\Chapters/Int
-roduction.aux")
-("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\Chapters/Des
-ignandOPT.aux")
-("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\Chapters/Tes
-ting.aux")
-("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\Chapters/Var
-iability.aux")
-("C:\Users\Charlie\Dropbox\elec6237\SOC_Design_report\Final Report\Chapters/Con
-clusions.aux"))
+ux")
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 89.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 89.
 Package rerunfilecheck Info: File `ReportMain.out' has not changed.
-(rerunfilecheck)             Checksum: 752F3ECB9D1BC50E15729FE68595A7AD;1461.
+(rerunfilecheck)             Checksum: AA58B9EBD28E8E89D503D3461A8066E9;2118.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 89.
  ) 
 Here is how much of TeX's memory you used:
- 8782 strings out of 493921
- 134932 string characters out of 3144870
- 228904 words of memory out of 3000000
- 11894 multiletter control sequences out of 15000+200000
- 32949 words of font info for 62 fonts, out of 3000000 for 9000
+ 8807 strings out of 493921
+ 134300 string characters out of 3144870
+ 226766 words of memory out of 3000000
+ 11924 multiletter control sequences out of 15000+200000
+ 34085 words of font info for 63 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,7n,32p,709b,322s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,7n,32p,707b,324s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)
 /MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on ReportMain.pdf (7 pages, 285969 bytes).
+9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/urw/times/utmri8a.pfb>
+Output written on ReportMain.pdf (4 pages, 369430 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
- 296 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 262 PDF objects out of 1000 (max. 8388607)
+ 58 named destinations out of 1000 (max. 500000)
+ 366 words of extra memory for PDF output out of 10000 (max. 10000000)
 

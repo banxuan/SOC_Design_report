@@ -1,13 +1,13 @@
-\chapter{Design and Optimisation} 
+\section{Design and Optimisation} 
 
 
-\section{NAND}
+\subsection{NAND}
 
-\section{NOR2}
+\subsection{NOR2}
 
-\section{XOR2}
+\subsection{XOR2}
 
-\section{DFF}
+\subsection{DFF}
 The design goal for the DFF was high speed. Initially it was designed using a standard circuit composed of NAND gates. However then the option of Transmission gates was considered and found to be superior. Using transmission gates a master slave style flip plot was produced as shown in figure \ref{fig:DFFSchem}. A ratio between PMOS and NMOS of 3 was chosen as it is the integer ratio which produced the best results for rise and fall time matching. As 0.35$\mu$ is the length set by the technology used the only parameter used is NWIDTH for each gate as PWIDTH is simply 3 times that.
 
 \begin{figure}[h]  
@@ -44,7 +44,7 @@ One point of note is that the QN output is created via a separate inverter rathe
 
 Due to the large transistor size layout was not particularly difficult as there was a lot of space for gate interconnects. When laying out the gates were placed in an order such as to minimise local process variations however with such large gates this is not particularly effective. A future layout revision could increase robustness by splitting the transistors into 2 or 3 smaller transistors of equal total size and interleaving them.
 
-\section{Duel Edge Triggered Flip Flop}
+\subsection{Dual Edge Triggered Flip Flop}
 
 The Dual Edge Triggered Flip Flop (DETFF) was designed using transmission gates as this allows the design to contain a minimum of 20 transistors (18 if there is no requirement for QN). Figure \ref{fig:DETFFSchem} shows the schematic produced. A ratio between PMOS and NMOS of 3 was chosen as it is the integer ratio which produced the best results for rise and fall time matching. As 0.35$\mu$ is the length set by the technology used the only parameter used is NWIDTH for each gate as PWIDTH is 3 times that.
 
@@ -68,10 +68,10 @@ Figure \ref{fig:DETFFLayout} shows the final layout of the DETFF its easily visi
 
 The layout of the design initial versions of the Transmission and inverter were lain out  at the minimum possible width and copied to populate the design and as interconnects were placed some of them had the wells expanded to allow for interconnect spacing.The pull-up PMOS are stacked vertically so as to not waste horizontal space as the rail distance is fixed meaning total area is effected by the width of the entire gate.
 
-\section{C Element}
+\subsection{C Element}
 
-\section{Dual Rail AND}
-The design goal for the Dual Rail AND was small area. The design was chosen based on its simplicity and the fact that the C-Element had the same goal of small area. This fact allowed us to simply reuse the C-Element with fixed parameters and reuse its layout saving substantial amounts of work in layout. there is a disparity between the Required fan-outs however as the fanout of the c-element is two and the AND has a fanout of one meaning the extra area gained is not too great.
+\subsection{Dual Rail AND}
+The design goal for the Dual Rail AND was small area. The design was chosen based on its simplicity and the fact that the C-Element had the same goal of small area. This fact allowed us to simply reuse the C-Element with fixed parameters and reuse its layout saving substantial amounts of work in layout. As the C-Element fan out is two this works well as the Y1 signal must drive 2 C Elements inside a subsequent AND giving an effective fanout of 1 which meets specification.
 
 \begin{figure}[h]  
 \centering
@@ -84,8 +84,8 @@ The only element in this design that required optimisation in design was the 3 i
 
 
 
-\section{1-bit Subtractor}
+\subsection{1-bit Subtractor}
 
-\section{2-to-1 Multiplexor}
+\subsection{2-to-1 Multiplexor}
 
-\section{Mutex Element}
+\subsection{Mutex Element}
