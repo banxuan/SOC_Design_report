@@ -22,6 +22,12 @@
 \usepackage{float}
 \usepackage{fixltx2e}
 \usepackage{hyperref}
+\usepackage{mathtools}
+
+
+\usepackage{tabularx}
+\usepackage{dblfloatfix}% http://ctan.org/pkg/dblfloatfix
+\usepackage{lipsum}% http://ctan.org/pkg/lipsum
 %\newcommand{\plus}{\raisebox{.4\height}{\scalebox{.6}{+}}}	% Used for the small + and - signs in the power testing table
 %\newcommand{\minus}{\raisebox{.4\height}{\scalebox{.8}{-}}} % Used for the small + and - signs in the power testing table
 
@@ -63,6 +69,7 @@ Abstract goes here. Use this latex template as our report template.
 
 %% ----------------------------------------------------------------
 \input{Chapters/Introduction}
+\input{Chapters/xuanban}
 \input{Chapters/DesignandOPT}
 \input{Chapters/Testing}
 \input{Chapters/Variability}
@@ -71,8 +78,8 @@ Abstract goes here. Use this latex template as our report template.
 
 
 %\addcontentsline{toc}{chapter}{References}
-\bibliographystyle{ieeetran}
-%\bibliography{Special/First_References}
+\bibliographystyle{IEEEtran}
+\bibliography{Special/First_References}
 %\end{document}
 %% ----------------------------------------------------------------
 
