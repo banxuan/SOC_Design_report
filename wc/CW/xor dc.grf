@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JavaBean CLASS="COM.cadence.awd.graph.GraphFrame">
+  <Properties>
+    <Property NAME="graph">
+      <JavaBean CLASS="COM.cadence.awd.graph.Rect2DGraph">
+        <Properties>
+          <Property NAME="backgroundName">black</Property>
+          <Property NAME="cursorOn">False</Property>
+          <Property NAME="dataSnapOn">False</Property>
+          <Property NAME="dependentAxis">
+            <JavaBean CLASS="COM.cadence.awd.graph.DepAxis">
+              <Properties>
+                <Property NAME="forceOrigin">False</Property>
+                <Property NAME="foregroundName">black</Property>
+                <Property NAME="logScale">False</Property>
+                <Property NAME="majGridsOn">True</Property>
+                <Property NAME="minGridsOn">True</Property>
+                <Property NAME="minorForegroundName">0x383838</Property>
+                <Property NAME="nameId">0</Property>
+                <Property NAME="scaleMode">1</Property>
+                <Property NAME="sigDigits">3</Property>
+                <Property NAME="sigDigitsDefault">True</Property>
+                <Property NAME="tempStripFlag">False</Property>
+                <Property NAME="title">Y0</Property>
+                <Property NAME="useDefaultTitle">True</Property>
+                <Property NAME="userMax">3.0000003</Property>
+                <Property NAME="userMin">0.0</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="displayDate">True</Property>
+          <Property NAME="displayType">5</Property>
+          <Property NAME="eyeDiagram">False</Property>
+          <Property NAME="fontName">Dialog</Property>
+          <Property NAME="fontSize">12</Property>
+          <Property NAME="fontStyle">0</Property>
+          <Property NAME="forceCommonLimits">False</Property>
+          <Property NAME="forceSquareAspect">False</Property>
+          <Property NAME="foregroundName">black</Property>
+          <Property NAME="freeze">False</Property>
+          <Property NAME="independentAxis">
+            <JavaBean CLASS="COM.cadence.awd.graph.IndepAxis">
+              <Properties>
+                <Property NAME="defaultTitle">PW</Property>
+                <Property NAME="forceOrigin">False</Property>
+                <Property NAME="foregroundName">black</Property>
+                <Property NAME="logScale">False</Property>
+                <Property NAME="majGridsOn">True</Property>
+                <Property NAME="minGridsOn">True</Property>
+                <Property NAME="minorForegroundName">0x383838</Property>
+                <Property NAME="nameId">0</Property>
+                <Property NAME="scaleMode">1</Property>
+                <Property NAME="sigDigits">1</Property>
+                <Property NAME="sigDigitsDefault">True</Property>
+                <Property NAME="title">PW</Property>
+                <Property NAME="useDefaultTitle">True</Property>
+                <Property NAME="userMax">5.000000500000001E-6</Property>
+                <Property NAME="userMin">0.0</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="labeledMarker">
+            <JavaBean CLASS="COM.cadence.awd.graph.LabeledMarker">
+              <Properties>
+                <Property NAME="arrowOn">True</Property>
+                <Property NAME="fontName">Dialog</Property>
+                <Property NAME="fontSize">12</Property>
+                <Property NAME="fontStyle">0</Property>
+                <Property NAME="foregroundName">white</Property>
+                <Property NAME="labelString">%M(%X)</Property>
+                <Property NAME="nameId">0</Property>
+                <Property NAME="traceAttached">True</Property>
+                <Property NAME="traceId">0</Property>
+                <Property NAME="type">4</Property>
+                <Property NAME="xLabelOffset">10</Property>
+                <Property NAME="xPosition">3.769590589851451E-6</Property>
+                <Property NAME="yLabelOffset">-15</Property>
+                <Property NAME="yPosition">1.6630436445652175</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="majorGridsForegroundName">0x6e6e6e</Property>
+          <Property NAME="majorGridsOn">True</Property>
+          <Property NAME="minorGridsForegroundName">0x383838</Property>
+          <Property NAME="minorGridsOn">True</Property>
+          <Property NAME="nameId">0</Property>
+          <Property NAME="peakSnapOn">False</Property>
+          <Property NAME="runVarName">PW</Property>
+          <Property NAME="stripChartOn">False</Property>
+          <Property NAME="subTitle"></Property>
+          <Property NAME="trace">
+            <JavaBean CLASS="COM.cadence.awd.graph.RectTrace">
+              <Properties>
+                <Property NAME="defaultTitle">VDC("/net0125")</Property>
+                <Property NAME="defaultTitleOn">True</Property>
+                <Property NAME="depAxisId">0</Property>
+                <Property NAME="directoryName">/home/cw17g10/Lab/Year4/ELEC6237/esdcadcadence/Sim/Nor12_test/spectre/schematic/psf</Property>
+                <Property NAME="eyeEnd">5.0E-6</Property>
+                <Property NAME="eyeInterval">4.000000000000001E-6</Property>
+                <Property NAME="eyeMode">False</Property>
+                <Property NAME="eyeStart">1.0E-6</Property>
+                <Property NAME="foregroundName">red</Property>
+                <Property NAME="indepAxisId">0</Property>
+                <Property NAME="name">VDC("/net0125")</Property>
+                <Property NAME="nameId">0</Property>
+                <Property NAME="stripIndex">0</Property>
+                <Property NAME="symbolCount">20</Property>
+                <Property NAME="symbolStyle">6</Property>
+                <Property NAME="symbolsOnFlag">False</Property>
+                <Property NAME="title">VDC("/net0125")</Property>
+                <Property NAME="traceStyle">36</Property>
+                <Property NAME="traceToken">
+                  <JavaBean CLASS="COM.cadence.awd.graph.TraceToken">
+                    <Properties>
+                      <Property NAME="compound">False</Property>
+                      <Property NAME="convertedName">VDC("/net0125")</Property>
+                      <Property NAME="dataDirectory">/home/cw17g10/Lab/Year4/ELEC6237/esdcadcadence/Sim/Nor12_test/spectre/schematic/psf</Property>
+                      <Property NAME="index">0</Property>
+                      <Property NAME="name">VDC("/net0125")</Property>
+                      <Property NAME="type">EXPRESSION</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="traceType">31</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="useDefaultSubTitle">True</Property>
+          <Property NAME="useDefaultTitle">True</Property>
+          <Property NAME="visible">True</Property>
+          <Property NAME="visibleDigitalRows">4</Property>
+          <Property NAME="visibleStripChartRows">6</Property>
+        </Properties>
+      </JavaBean>
+    </Property>
+    <Property NAME="height">590</Property>
+    <Property NAME="labelText">%M(%X)</Property>
+    <Property NAME="stripChartState">False</Property>
+    <Property NAME="width">570</Property>
+    <Property NAME="xLocation">672</Property>
+    <Property NAME="yLocation">210</Property>
+  </Properties>
+</JavaBean>
+
